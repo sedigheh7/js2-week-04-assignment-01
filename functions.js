@@ -1,10 +1,24 @@
-const getProductsOfNormalQuality = () => {};
+const getProductsOfNormalQuality = (pArray) => {
+return pArray
+      .filter((pQuality) => pQuality.quality.indexOf("Normal") !== -1 )
+      .map((pQuality) => pQuality)
+};
 
-const getProductImageWithPngExtension = () => {};
+const getProductImageWithPngExtension = (pArray) => {
+  return pArray
+              .filter((pImag) => pImag.productImage.includes("png") == true)
+              .map((pPng) => pPng)
+};
 
-const getCalorieOfTheMostExpensiveProduct = () => {};
+const getCalorieOfTheMostExpensiveProduct = (pArray) => {
+  return pArray.sort((a , b) => b.price - a.price) [0].totalCalories
+};
 
-const sortByExpirationDate = () => {};
+const sortByExpirationDate = (pArray) => {
+  return pArray
+                .sort((a , b) => a.expireDate - b.expireDate)
+                .map((pProduct) => pProduct)
+};
 
 export {
   getProductsOfNormalQuality,
